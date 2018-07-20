@@ -1,0 +1,27 @@
+@import "variables";
+@import "mixins";
+
+.header-wrapper {
+  padding: 9px 10px;
+  box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.15);
+}
+
+span {
+  margin: 0 7px;
+}
+
+.main-parts {
+  padding-top: 10px;
+  &__centre {
+    padding: 10px 0 0 0;
+  }
+}
+
+.header-letter-circle {
+  @include circle(black,$main-gray,28px);
+}
+
+.header-icon-circle {
+  @include circle(black,$light-pink, 50px);
+}
+

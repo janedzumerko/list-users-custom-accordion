@@ -1,0 +1,113 @@
+@import "variables";
+@import "mixins";
+
+.person-head {
+  cursor: pointer;
+  padding: 20px;
+  border-bottom: 1px solid rgb(237, 237, 237);
+
+  &--name {
+    margin-left: 25px;
+  }
+
+  &--right {
+    margin-top: 4px;
+  }
+
+  &--shadow {
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+  }
+}
+
+.noperformance-circle {
+  @include empty-circle($main-gray, $main-gray, 30px);
+}
+
+.performance-circle {
+  @include empty-circle(black, gray, 30px);
+}
+
+.person-body {
+  display: none;
+}
+
+.body-wrapper {
+  padding: 30px;
+  border-bottom: 1px solid rgb(237, 237, 237);
+}
+
+.person-body.active {
+  display: block;
+  -webkit-animation: fadeIn .4s;
+  animation: fadeIn .4s;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.details {
+  padding-top: 20px;
+  border-top: 1px solid rgb(237, 237, 237);
+
+  &__left {
+    margin-bottom: 25px;
+
+    &--title {
+      font-size: 14px;
+      color: grey;
+      padding-left: 15px;
+    }
+  }
+
+  &__left p {
+    margin: 0;
+  }
+
+  &__left:last-child {
+    margin: 0;
+  }
+
+  &--third {
+    width: 33.3%;
+  }
+
+  &__showless {
+    cursor: pointer;
+    margin-top: 20px;
+    color: $gray;
+    border-bottom: 1px solid rgb(237, 237, 237);
+  }
+
+  &--full-star {
+    color: $star;
+  }
+  &--empty-star {
+    color: $gray;
+  }
+}
+
+.person-circle-big-success {
+  @include empty-circle($success, $success, 120px);
+}
+
+.person-circle-big-nostate {
+  @include empty-circle($gray, $gray, 120px);
+}
+
+
+

@@ -1,0 +1,99 @@
+<div class="person-wrapper">
+  <div class="person-head" [class.person-head--shadow]="active" (click)="onClick($event)">
+    <div class="row">
+      <div class="col-sm-3">
+        <span
+          [ngClass]="{'noperformance-circle' : person.performance === '?',
+              'performance-circle': person.performance !== '?'}">{{person.performance}}</span>
+        <span class="person-head--name">{{person.name}}</span>
+      </div>
+      <div class="col-sm-9 person-head--right">
+        <span>Sales Representive</span>
+        <span class="float-right" [ngStyle]="{'color': person.feedback === '1'? 'green' : 'red'}">
+          <i *ngIf="person.feedback === '1'" class="fas fa-thumbs-up"></i>
+          <i *ngIf="person.feedback === '-1'" class="fas fa-thumbs-down"></i>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="person-body" [class.active]="active">
+    <div class="body-wrapper">
+      <div class="details">
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="details__left">
+              <p class="details__left--title">Position</p>
+              <p>
+                <i class="fas fa-male"></i>
+                Sales Representative
+              </p>
+            </div>
+            <div class="details__left">
+              <p class="details__left--title">Phone Number</p>
+              <p>
+                <i class="fas fa-pen"></i>
+                +38922332211231
+              </p>
+            </div>
+            <div class="details__left">
+              <p class="details__left--title">Email</p>
+              <p>
+                <i class="fas fa-envelope"></i>
+                john@smith.com
+              </p>
+            </div>
+            <div class="details__left">
+              <p>
+                <i class="fas fa-arrow-up"></i>
+                CV
+            </div>
+          </div>
+          <div class="col-sm-9">
+            <div class="details--third float-left text-center">
+              <div class="person-circle-big-success" placement="top"
+                   ngbTooltip="Random text dkfj kdsjfs dfjljs fljfdsj ssdsf dsf dsfsdfds">5
+              </div>
+              <div>Performance</div>
+              <div>
+                <span *ngFor="let number of [1,2,3,4,5]">
+                  <i *ngIf="number <= person.score" class="fas fa-star details--full-star"></i>
+                  <i *ngIf="number > person.score" class="far fa-star details--empty-star"></i>
+                </span>
+              </div>
+            </div>
+            <div class="details__retention details--third float-left text-center">
+              <div class="person-circle-big-nostate" placement="top"
+                   ngbTooltip="Random text dkfj kdsjfs dfjljs fljfdsj ssdsf dsf dsfsdfds">
+                &#47;
+              </div>
+              <div>Retention</div>
+              <div>
+                <span *ngFor="let number of [1,2,3,4,5]">
+                  <i *ngIf="number <= person.score" class="fas fa-star details--full-star"></i>
+                  <i *ngIf="number > person.score" class="far fa-star details--empty-star"></i>
+                </span>
+              </div>
+            </div>
+            <div class="details__performance details--third float-left text-center">
+              <div class="person-circle-big-nostate" placement="top"
+                   ngbTooltip="Random text dkfj kdsjfs dfjljs fljfdsj ssdsf dsf dsfsdfds">
+                &#63;
+              </div>
+              <div>Your score</div>
+              <div>
+                <span *ngFor="let number of [1,2,3,4,5]">
+                  <i *ngIf="number <= person.score" class="fas fa-star details--full-star"></i>
+                  <i *ngIf="number > person.score" class="far fa-star details--empty-star"></i>
+                </span>
+              </div>
+            </div>
+            <div style="clear: both"></div>
+            <div class="details__showless" (click)="onClick($event)">
+              Show less
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+@mixin box-emboss($outerOpacity, $innerOpacity) {
+  box-shadow: rgba(white, $outerOpacity) 0 1px 0,
+  rgba(black, $innerOpacity) 0 1px 0 inset;
+}
+
+@mixin circle($color, $background, $size) {
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border: 1px solid $background;
+  color: $color;
+  background: $background;
+  display: inline-block;
+  line-height: $size;
+  text-align: center;
+  width: $size;
+}
+
+@mixin empty-circle($color, $border, $size) {
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border: 1px solid $border;
+  color: $color;
+  font-size: $size - 45px;
+  display: inline-block;
+  line-height: $size;
+  text-align: center;
+  width: $size;
+}

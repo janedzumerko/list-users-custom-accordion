@@ -1,0 +1,40 @@
+<div class="row main-wrapper">
+  <div class="col-sm-2">
+    <div class="main-left">
+      <div class="float-left">
+        <i class="fas fa-exclamation-circle"></i>
+      </div>
+      <div class="float-left">
+        <div class="main-left__item">
+          <p class="main-left__item--percent">86%</p>
+          <p class="main-left__item--desc">Calibration</p>
+        </div>
+      </div>
+      <div style="clear: both"></div>
+      <div class="float-left">
+        <i class="fas fa-exclamation-circle"></i>
+      </div>
+      <div class="float-left">
+        <div class="main-left__item">
+          <p class="main-left__item--percent">86%</p>
+          <p class="main-left__item--desc">Prediction Power</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-8 people-list">
+    <div class="scrollable">
+      <app-people>
+        <app-person *ngFor="let person of people" [person]="person">
+        </app-person>
+      </app-people>
+    </div>
+  </div>
+
+  <div class="col-sm-2">
+    <div class="main-right">
+      <span class="main-right__button">+</span>
+    </div>
+  </div>
+</div>
