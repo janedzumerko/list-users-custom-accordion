@@ -12,7 +12,7 @@ export class PersonComponent implements OnInit {
   // data is received from MainComponent
   @Input() person: IPerson;
 
-  @Input() active: boolean = false;
+  @Input() active = false;
 
   @Output() toggleAccordion: EventEmitter<boolean> = new EventEmitter();
 

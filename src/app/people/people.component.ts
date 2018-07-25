@@ -1,4 +1,4 @@
-import {Component, ContentChildren, OnDestroy, OnInit, QueryList} from '@angular/core';
+import {AfterContentInit, Component, ContentChildren, OnDestroy, OnInit, QueryList} from '@angular/core';
 import {PersonComponent} from '../person/person.component';
 
 @Component({
@@ -6,7 +6,7 @@ import {PersonComponent} from '../person/person.component';
   templateUrl: './people.component.html',
   styleUrls: ['./people.component.scss']
 })
-export class PeopleComponent implements OnDestroy {
+export class PeopleComponent implements OnDestroy, AfterContentInit {
 
   @ContentChildren(PersonComponent) accordions: QueryList<PersonComponent>;
   private subscriptions = [];
